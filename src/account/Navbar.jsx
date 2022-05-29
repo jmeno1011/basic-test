@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Login from "./Login";
 
-const Layout = () => {
+const Navbar = () => {
   return (
     <>
       <header>
@@ -15,20 +15,15 @@ const Layout = () => {
           </ul>
         </Nav>
       </header>
-      <Login />
     </>
   );
 };
 
-export default Layout;
+export default Navbar;
 
 const Nav = styled.nav`
   width: 100%;
   background-color: #fccc8d;
-  ul,
-  li {
-    list-style: none;
-  }
   ul {
     display: flex;
   }

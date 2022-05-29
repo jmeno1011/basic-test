@@ -1,44 +1,48 @@
 import styled from "styled-components";
+import Navbar from "./Navbar";
 
 export default function Login() {
   return (
-    <Layout>
-      <Form>
-        <h1>Sign In</h1>
-        <div className="mb-16">
-          <label>Username</label>
-          <input
-            className="form-input-text"
-            type={"text"}
-            placeholder="Enter Username"
-          />
-        </div>
-        <div className="mb-16">
-          <label>Password</label>
-          <input
-            className="form-input-text"
-            type={"password"}
-            placeholder="Enter Password"
-          />
-        </div>
-        <div className="mb-16">
-          <div>
-            <input type="checkbox" />
-            <label className="">Remember me</label>
+    <>
+      <Navbar />
+      <Wrapper>
+        <Form>
+          <h1>Sign In</h1>
+          <div className="mb-16">
+            <label>Username</label>
+            <input
+              className="form-input-text"
+              type={"text"}
+              placeholder="Enter Username"
+            />
           </div>
-        </div>
-        <div className="btn">
-          <button type="submit">Submit</button>
-        </div>
-        <p className="forgot">
-          Forgot <a href="#">password?</a>
-        </p>
-      </Form>
-    </Layout>
+          <div className="mb-16">
+            <label>Password</label>
+            <input
+              className="form-input-text"
+              type={"password"}
+              placeholder="Enter Password"
+            />
+          </div>
+          <div className="mb-16">
+            <div>
+              <input type="checkbox" />
+              <label className="">Remember me</label>
+            </div>
+          </div>
+          <div className="btn">
+            <button type="submit">Submit</button>
+          </div>
+          <p className="forgot">
+            Forgot <a href="#">password?</a>
+          </p>
+        </Form>
+      </Wrapper>
+    </>
   );
 }
 
-const Layout = styled.div`
+const Wrapper = styled.div`
   padding: 8px;
   margin-bottom: 24px;
   background-color: #fee0b7;

@@ -1,37 +1,49 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Layout from "./account/Layout";
 import { Link, Route, Routes } from "react-router-dom";
-import Login from "./account/Login";
-import About from "./About";
+import styled from "styled-components";
 
 function App() {
   return (
     <>
       <div className="App">
         <header className="App-header">
+          <NavBar>
+            <ul>
+              <li>
+                <Link to={"/about"}>About</Link>
+              </li>
+              <li>
+                <Link to={"/login"}>Sign in</Link>
+              </li>
+            </ul>
+          </NavBar>
           <img src={logo} className="App-logo" alt="logo" />
           <p>Simple Implementing Features Test Site on React</p>
-          <Link to={"/about"}>About</Link>
-          <Link to={"/login"}>Sign in</Link>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
-      <Routes>
-        <Route path="/" />
-        <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
-      </Routes>
-      {/* <Layout /> */}
     </>
   );
 }
 
 export default App;
+
+const NavBar = styled.nav`
+  width: 100%;
+  border-top: 1px solid burlywood;
+  border-bottom: 1px solid burlywood;
+  ul {
+    display: flex;
+  }
+  li {
+    padding: 8px 16px;
+    border-right: 1px solid burlywood;
+  }
+  li:hover {
+    background-color: brown;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+`;
