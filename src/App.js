@@ -21,19 +21,16 @@ function App() {
           </NavBar>
         </header>
         <section style={{ display: "flex" }}>
-          <nav
-            style={{
-              backgroundColor: "#494E67",
-              width: "8vh",
-              height: "100vh",
-              color: "white",
-            }}
-          >
+          <SideNav>
             <ul>
-              <li>overview</li>
-              <li>dashboard</li>
+              <li>
+                <Link to={"/about"}>About</Link>
+              </li>
+              <li>
+                <Link to={"/login"}>Sign in</Link>
+              </li>
             </ul>
-          </nav>
+          </SideNav>
           <p>Simple Implementing Features Test Site on React</p>
         </section>
       </div>
@@ -42,6 +39,28 @@ function App() {
 }
 
 export default App;
+
+const SideNav = styled.nav`
+  width: 8vh;
+  min-width: 65px;
+  max-width: 100px;
+  height: calc(100vh - 8vh);
+  background-color: #494e67;
+  li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  li:hover {
+    background-color: white;
+    a {
+      color: #713bdb;
+    }
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+`;
 
 const NavBar = styled.nav`
   width: 100%;
