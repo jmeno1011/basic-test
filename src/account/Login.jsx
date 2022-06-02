@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import { GoogleLogin } from "react-google-login";
 
 export default function Login() {
+  const responseGoogle = async (response) => {
+    console.log(response);
+  };
+
   return (
     <>
       <Navbar />
@@ -26,8 +31,8 @@ export default function Login() {
           </div>
           <div className="mb-16">
             <div>
-              <input type="checkbox" />
-              <label className="">Remember me</label>
+              <input type="checkbox" id="remember" />
+              <label htmlFor="remember">Remember me</label>
             </div>
           </div>
           <div className="btn">
@@ -36,6 +41,13 @@ export default function Login() {
           <p className="forgot">
             Forgot <a href="#">password?</a>
           </p>
+          <GoogleLogin
+            clientId="63720671273-q7avief1jitertjofvtip7a2tdilflig.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+          />
         </Form>
       </Wrapper>
     </>
