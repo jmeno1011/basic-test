@@ -1,25 +1,14 @@
-import logo from "./assets/tono_logo.png";
 import "./App.css";
 import { Link, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import { Icon } from "@iconify/react";
+import Nav from "./common/Nav";
 
 function App() {
   return (
     <>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} />
-          <NavBar>
-            <ul>
-              <li>
-                <Link to={"/about"}>About</Link>
-              </li>
-              <li>
-                <Link to={"/login"}>Sign in</Link>
-              </li>
-            </ul>
-          </NavBar>
-        </header>
+        <Nav />
         <section style={{ display: "flex" }}>
           <SideNav>
             <ul>
@@ -55,30 +44,6 @@ const SideNav = styled.nav`
     a {
       color: #713bdb;
     }
-  }
-  a {
-    color: white;
-    text-decoration: none;
-  }
-`;
-
-const NavBar = styled.nav`
-  width: 100%;
-  /* border-top: 1px solid burlywood; */
-  border-bottom: 1px solid burlywood;
-  background-color: orange;
-  ul {
-    height: 100%;
-    display: flex;
-  }
-  li {
-    padding: 8px 16px;
-    border-right: 1px solid burlywood;
-    display: flex;
-    align-items: center;
-  }
-  li:hover {
-    background-color: brown;
   }
   a {
     color: white;
